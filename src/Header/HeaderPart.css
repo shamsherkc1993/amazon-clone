@@ -48,11 +48,15 @@
   outline: 0;
   width: 80% !important;
 }
+.header-optionbasket a {
+  color: #fff;
+}
 
 .search-icon {
   padding: 10px;
   height: 10px;
   background-color: rgb(158, 136, 93);
+  color: #fff;
 }
 
 .header-nav {

@@ -2,16 +2,20 @@ import React from "react";
 import HeaderPart from "./HeaderPart.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ cart }) => {
+  console.log(cart);
   return (
     <>
       <div className="header">
-        <img
-          src="https://p7.hiclipart.com/preview/134/12/5/united-states-amazon-com-logo-retail-company-book-now-button.jpg"
-          alt="logo"
-          className="logo"
-        />
+        <Link to="/">
+          <img
+            src="https://p7.hiclipart.com/preview/134/12/5/united-states-amazon-com-logo-retail-company-book-now-button.jpg"
+            alt="logo"
+            className="logo"
+          />
+        </Link>
         <div className="header-search">
           <input type="text" />
           <SearchIcon className="search-icon" />
@@ -30,8 +34,10 @@ const Header = () => {
             <span className="headerspan-two">Prime</span>
           </div>
           <div className="header-optionbasket">
-            <ShoppingCartIcon />
-            <span>2</span>
+            <Link to="/cart">
+              <ShoppingCartIcon />
+              <span>{cart.total_items}</span>
+            </Link>
           </div>
         </div>
       </div>
